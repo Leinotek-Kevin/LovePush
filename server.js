@@ -7,11 +7,13 @@ const bibleRoute = require("./routes").bible;
 const cors = require("cors");
 const port = process.env.PORT || 8080;
 
+const crawer = require("./crawer/bible-crawer");
+
 require("./service");
 
 //連結 mongoDB
 mongoose
-  .connect(process.env.MONGODB_CONNECTION)
+  .connect(process.env.RELEASE_MONGODB_CONNECTION)
   .then(() => {
     console.log("連結到 mongoDB");
   })
@@ -31,3 +33,5 @@ app.use("/api/bible", bibleRoute);
 app.listen(port, () => {
   console.log("後端伺服器聆聽中,,,");
 });
+
+crawer();
