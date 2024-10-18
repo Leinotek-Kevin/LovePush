@@ -8,7 +8,7 @@ const crawerBible = () => {
       return null;
     }
 
-    await bible.deleteMany();
+    //await bible.deleteMany();
     const urls = data.split(",");
 
     urls.forEach(async (url) => {

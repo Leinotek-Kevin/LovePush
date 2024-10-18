@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 //製作每日聖經 Schema
-const bibbeSaveSchema = new Schema({
+const bibbeIndexchema = new Schema({
   //紀錄更新日期
   recordDate: {
     //2024/10/17
@@ -24,11 +24,11 @@ const bibbeSaveSchema = new Schema({
 });
 
 //隱藏 _id,__v
-bibbeSaveSchema.set("toJSON", {
+bibbeIndexchema.set("toJSON", {
   transform: (doc, ret, options) => {
     delete ret._id;
     delete ret.__v;
     return ret;
   },
 });
-module.exports = mongoose.model("BibleSave", bibbeSaveSchema);
+module.exports = mongoose.model("BibleIndex", bibbeIndexchema);
