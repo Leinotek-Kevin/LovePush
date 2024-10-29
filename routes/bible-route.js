@@ -1,5 +1,3 @@
-const { findOneAndUpdate } = require("../models/bible-model");
-
 const router = require("express").Router();
 const Bible = require("../models").bible;
 const BibleIndex = require("../models").bibleIndex;
@@ -60,7 +58,7 @@ router.post("/update-index", async (req, res) => {
   }
 });
 
-//灌入指定每日一句聖經集合
+//取得目前的聖經位置
 router.get("/current-index", async (req, res) => {
   try {
     const data = await BibleIndex.findOne({});
