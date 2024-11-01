@@ -4,12 +4,11 @@ const BibleIndex = require("../models").bibleIndex;
 
 //取得指定每日一句聖經
 router.get("/today-bible", async (req, res) => {
-  const bilbeData = await BibleIndex.findOne();
-  const currentIndex = bilbeData.saveIndex;
-
-  const data = await Bible.findOne({ currentIndex });
-
   try {
+    const bilbeData = await BibleIndex.findOne();
+    const currentIndex = bilbeData.saveIndex;
+
+    const data = await Bible.findOne({ currentIndex });
     if (data) {
       return res.status(200).send({
         status: true,
