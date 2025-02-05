@@ -7,8 +7,6 @@ const bibleRoute = require("./routes").bible;
 const cors = require("cors");
 const port = process.env.PORT || 8080;
 
-require("./service");
-
 //連結 mongoDB
 mongoose
   .connect(process.env.MONGODB_CONNECTION)
