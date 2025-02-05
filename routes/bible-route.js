@@ -25,6 +25,7 @@ router.get("/today-bible", async (req, res) => {
     return res.status(500).send({
       status: false,
       message: "Server Error",
+      e,
     });
   }
 });
